@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', (e) => {
+        let listitems = document.querySelectorAll("li");
+        let value = document.querySelector("#search");
+        let btn = document.querySelector("#searchbtn");
+        btn.addEventListener('click', (evt)=>{
+            let count=0;
+            listitems.forEach(element => {
+                if(element.innerText.indexOf(value.value)!=-1){
+                    element.innerHTML=`<b>${element.innerHTML}</b>`
+                    count++;
+                }
+                else{
+                    element.innerHTML=element.innerHTML.replace("<b>","");
+                    element.innerHTML=element.innerHTML.replace("</b>","");
+                }
+                
+            });
+            console.log(`${count} element(s) match.`);
+        });
+    });
+</script>
+<body>
+    <h1>List of Cities</h1>
+    <ul id="cities">
+        <li>Paris</li>
+        <li>Sofia</li>
+        <li>Prague</li>
+        <li>Moscow</li>
+        <li>Berlin</li>
+    </ul>
+    <input type="text" id="search">
+    <input type="button" value="Search" id="searchbtn">
+</body>
+</html>

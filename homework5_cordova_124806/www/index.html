@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Security-Policy"
+		content="default-src *; style-src 'self' http://* 'unsafe-inline'; img-src 'self' data:; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+	<meta name="format-detection" content="telephone=no">
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+	<meta name="color-scheme" content="light dark">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="js/jquery-1.5.0.mobile.min.css">
+	<style>
+		/* For avoiding title truncation in wp8 */
+		.ui-header .ui-title {
+			overflow: visible !important;
+		}
+
+		/* For fixing the absolute position issue for the default cordova gen page*/
+		#cjp-accordion1 .app {
+			left: 5px !important;
+			margin: 5px !important;
+			position: relative !important;
+		}
+	</style>
+	<title>Hello World</title>
+</head>
+
+<body>
+	<!-- jquery mobile page 1 -->
+	<div data-role="page" id="page1">
+		<div data-role="header">
+			<h1>Page 1</h1>
+		</div>
+
+		<div role="main" class="ui-content">
+			<p>Page 1 content goes here</p>
+			<a href="#page2">Goto page2</a>
+
+		</div>
+		<!-- end of page 1 content -->
+
+		<div data-role="footer" data-position="fixed">
+			<h4>Page 1 Footer</h4>
+		</div>
+		<!-- end page 1 footer -->
+	</div>
+	<!-- end page 1 -->
+
+	<!-- jquery mobile page 2 -->
+	<div data-role="page" id="page2">
+		<div data-role="header">
+			<h1>Page 2</h1>
+		</div>
+
+		<div role="main" class="ui-content">
+			<h4>Page 2 content goes here</h4>
+			<a href="#page1">Goto page1</a>
+		</div>
+		<!-- end of page 2 content -->
+
+		<div data-role="footer" data-position="fixed">
+			<h4>Page 2 Footer</h4>
+		</div>
+		<!-- end page 2 footer -->
+	</div>
+	<!-- end page 2 -->
+	<script src="cordova.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js" id="cordova-jquery"></script>
+	<script type="text/javascript" id="jqm-trans-disable">
+		/* For having a faster transition */
+		$(document).on("mobileinit", function () {
+			$.mobile.defaultPageTransition = "none";
+			$.mobile.defaultDialogTransition = "none";
+		});
+	</script>
+	<script type="text/javascript" src="js/jquery-1.5.0.mobile.min.js"></script>
+	<script src="js/index.js"></script>
+</body>
+
+</html>

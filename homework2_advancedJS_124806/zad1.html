@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum numbers</title>
+</head>
+<body>
+    <input type="text" /> + <input type="text" /> = <input type="text" />
+    <input type="button" value="calc" onclick="calc()"/>
+    <script>
+    function calc() {
+        let inputs = document.querySelectorAll("input");
+        inputs[2].value=Number(inputs[0].value) + Number(inputs[1].value)
+    }
+    </script>
+</body>
+</html>
